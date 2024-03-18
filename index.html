@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="icon" href="images\logo-via-logohub.png">
+  <title>IT28 Balsa</title>
+  <meta charset="UTF-8">
+  <!--siimpleCSS hosted version-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siimple@3.3.1/dist/siimple.min.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<style>@import url("https://fonts.googleapis.com/css?family=Barlow&display=swap");
+
+    body{
+        padding: 20px 0;
+    }  
+  
+  .shopping-cart{
+      float: right;
+      padding: 12px 30px;
+  }
+  
+  nav ul{
+      list-style-type: none;
+      display: flex;
+      float: left;
+      margin: 0;
+      padding: 0;
+  }
+  
+  nav ul li{
+      list-style: none;
+      font-family: 'Barlow', sans-serif;
+      font-size: 25px;
+      font-weight: 700;
+  }
+  
+  nav ul li a{
+      line-height: 80px;
+      color: #4d6376;
+      padding: 12px 30px;
+      text-decoration: none;
+      transition: .3s;
+  }
+  
+  a:hover{
+      background-color: #d3d4d6;
+      color:#f0f1f4;
+  }
+  
+  img{
+    float: right;
+  }
+  
+  .image-product{
+      width: 20%;
+      height: 30%;
+  }
+  
+  
+  
+  .cards{
+      width: 90%;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-gap: 20px;
+  }
+  
+  .card{
+      width:350px;
+      min-height: 250px;
+      margin: 10px;
+      box-shadow:  0 2px 5px rgba(0,0,0,0.1);
+      transition:  all .1s ease-in;
+  }
+  
+  .card:hover{
+  
+      top: -2px;
+      box-shadow:  0 4px 5px rgba(0,0,0,0.2);
+  }
+  
+  
+  .image-product{
+      width: 200px;
+      margin: 10px;
+  }
+  
+  p{
+      font-size: 1.2em;
+      line-height: 1.4em;
+      margin: 10px;
+  }
+  .price{
+      float: right;
+      margin-right: 15px;
+  }
+  
+  .btn{
+      border-radius: 20px;
+      font-family: 'Barlow', sans-serif;
+      margin-top: 5px;
+      margin-bottom: 15px;
+  }
+  
+  #btn-detail{
+  
+      border: none;
+      background-color: transparent;
+  }
+  
+  #btn-add{
+      background-color:#2c3632;
+      color:#f0f1f4;
+      width: 100px;
+      height: 30px;
+      border: none;
+  }
+  </style>
+
+  <script>let addButtons = document.querySelectorAll(".btn"),
+    shopping_cart = document.getElementById("shopping-add"),
+    count = 0;
+  
+  addButtons.forEach((addButton) => {
+    addButton.addEventListener("click", function () {
+      const changeColorBtn = addButton.style.backgroundColor;
+  
+      console.log(changeColorBtn);
+  
+      if (!changeColorBtn || changeColorBtn === "rgb(44, 54, 50)") {
+        addButton.style.backgroundColor = "green";
+      } else {
+        addButton.style.backgroundColor = "rgb(44, 54, 50)";
+      }
+  
+      count += 1;
+  
+      shopping_cart.textContent = count;
+    });
+  });</script>
+
+<body>
+  <!--Menù di navigazione
+            -Home
+            -Webshop
+            -Contact
+            + icona carrello -> effetto aggiungi carrello
+        
+        -->
+  <div class="navbar">
+    <nav>
+      <ul>
+        <li><a href="#">Product Inventory</a></li>
+        <li><a href="#">Payment & Accounting</a></li>
+        <li><a href="#">Logistics</a></li>
+        <li><a href="#">Customer Service</a></li>
+        <li><a href="#">Reports</a></li>
+      </ul>
+      <div id="shopping-add" class="shopping-cart"></div><img src="" />
+    </nav>
+  </div>
+
+  <!--
+            Scheda articolo
+            -Immagine prodotto
+            -Nome Prodotto
+            -Descrizione
+            -Prezzo
+            -Dettaglio prodotto -> animazione
+            -Aggiungi al carello -> bottone - azione aggiungi //stile verde 
+        -->
+
+  <div class="cards">
+    <div class="card">
+      <img class="image-product" src="" alt="product-1">
+      <h2> Binangkal</h2>
+      <p> Binangkal is a type of doughnut from the islands of Visayas and Mindanao in the Philippines. It is made from deep-fried dense dough balls coated with sesame seeds. It is usually eaten with hot chocolate or coffee.</p>
+      <div class="price">150</div>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+    <div class="card">
+      <img class="image-product" src="" alt="product-2">
+      <h2>Bibingka</h2>
+      <p>'Bibingka' is another Philippine rice cake made from wet-milled rice flour combined with sugar and coconut milk, wrapped in banana leaves with charcoal placed on top, and baked until brown.</p>
+      <div class="price"> 100</div>
+      <button class="btn" id="btn-detail"><img src="" />Quickview</button>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+    <div class="card">
+      <img class="image-product" src="images\eric-niklas-DmZuhClBhZ0-unsplash.jpg" alt="product-3">
+      <h2>Product Name</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+        Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="price"> 231,-</div>
+      <button class="btn" id="btn-detail"><img src="https://img.icons8.com/carbon-copy/30/000000/info.png" />Quickview</button>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+    <div class="card">
+      <img class="image-product" src="images\eric-niklas-DmZuhClBhZ0-unsplash.jpg" alt="car-lego">
+      <h2>Product Name</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+        Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="price"> 231,-</div>
+      <button class="btn" id="btn-detail"><img src="https://img.icons8.com/carbon-copy/30/000000/info.png" />Quickview</button>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+    <div class="card">
+      <img class="image-product" src="images\eric-niklas-DmZuhClBhZ0-unsplash.jpg" alt="car-lego">
+      <h2>Product Name</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+        Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="price"> 231,-</div>
+      <button class="btn" id="btn-detail"><img src="https://img.icons8.com/carbon-copy/30/000000/info.png" />Quickview</button>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+    <div class="card">
+      <img class="image-product" src="images\eric-niklas-DmZuhClBhZ0-unsplash.jpg" alt="car-lego">
+      <h2>Product Name</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+        Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="price"> 231,-</div>
+      <button class="btn" id="btn-detail"><img src="https://img.icons8.com/carbon-copy/30/000000/info.png" />Quickview</button>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+    <div class="card">
+      <img class="image-product" src="images\eric-niklas-DmZuhClBhZ0-unsplash.jpg" alt="car-lego">
+      <h2>Product Name</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+        Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="price"> 231,-</div>
+      <button class="btn" id="btn-detail"><img src="https://img.icons8.com/carbon-copy/30/000000/info.png" />Quickview</button>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+    <div class="card">
+      <img class="image-product" src="images\eric-niklas-DmZuhClBhZ0-unsplash.jpg" alt="car-lego">
+      <h2>Product Name</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br>
+        Ut enim ad minim veniam, quis nostrud exercitation
+        ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <div class="price"> 231,-</div>
+      <button class="btn" id="btn-detail"><img src="https://img.icons8.com/carbon-copy/30/000000/info.png" />Quickview</button>
+      <button class="btn" id="btn-add">Add cart</button>
+    </div>
+  </div>
+</body>
+
+
+</html>
